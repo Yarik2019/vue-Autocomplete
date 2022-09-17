@@ -98,7 +98,7 @@ export default {
       this.selected -= 1;
       this.scrollToItem();
     },
-
+    
     down(){
       if(this.selected >= this.matches.length - 1){
         return;

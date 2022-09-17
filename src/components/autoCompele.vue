@@ -65,7 +65,7 @@ export default {
       this.visible = !this.visible;
 
       setTimeout(()=>{
-        this.$refs.input.focus()
+        this.$refs.input.focus();
       }, 50)
     },
 
@@ -87,7 +87,7 @@ export default {
           this.selected = 0;
       }
 
-      this.$emit('selectedItem', JSON.parse(JSON.stringify(this.selectedItem)))
+      this.$emit('selectedItem', JSON.parse(JSON.stringify(this.selectedItem)));
     },
 
     up(){
@@ -96,20 +96,20 @@ export default {
       }
 
       this.selected -= 1;
-      this.scrollToItem()
+      this.scrollToItem();
     },
 
     down(){
       if(this.selected >= this.matches.length - 1){
-        return
+        return;
       }
 
       this.selected += 1;
-      this.scrollToItem()
+      this.scrollToItem();
     },
 
     scrollToItem(){
-      this.$refs.optionsList.scrollTop = this.selected * this.itemHeight 
+      this.$refs.optionsList.scrollTop = this.selected * this.itemHeight; 
     }
   },
   computed: {
@@ -120,7 +120,7 @@ export default {
         return [];
       }
 
-      return this.items.filter((item) => item.name.toLowerCase().includes(this.query.toLowerCase()))
+      return this.items.filter((item) => item.name.toLowerCase().includes(this.query.toLowerCase()));
     }
   },
 }
